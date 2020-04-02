@@ -1,29 +1,73 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
+<title>3D Cube</title>
+<style>
+body{
+    margin-top: 150px;
+background:black;
+}
+.face{
+position:absolute;/*seems like in stack*/
+height::360px;
+width:360px;
+padding:40px;
+background-color:rgba(50,50,50,0.5);
+}
+@-webkit-keyframes rotate
+{
+from {-webkit-transform:rotateY(0deg)}
+50% {-webkit-transform:rotateY(360deg)}
+to {-webkit-transform:rotateY(0deg)}
+}
+#cube{
+position:relative;
+margin:auto;
+width:400px;
+height:400px;
+-webkit-transform-style:preserve-3d; /* Enable 3-D style */
+-webkit-animation-name: rotate; /* type of animation is rotating */
+-webkit-animation-duration: 20s; /* duration of animation in seconds */
+-webkit-animation-timing-function: ease-in-out; /* timing function of animation */
+-webkit-animation-iteration-count: infinite ; /* the infinite property of iteration make cube to rotate infinetly around Y axis 360 deg. */
+}
+#container{
+margin:80px;
+-webkit-perspective:800px; /* here more value more far you are and less value closer you are to object */
+-webkit-perspective-origin: 50% 110px; /* The perspective-origin property defines where a 3D element is based in the x- and the y-axis.
+This property allows you to change the bottom position of 3D elements. */
+}
+/* Here arrange cube's faces around X and Y axis and translatez */
+#F1{
+-webkit-transform:rotateX(90deg)translatez(200px);
+}
+#F2{
+-webkit-transform:translatez(200px);
+}
+#F3{
+-webkit-transform:rotateY(90deg)translatez(200px);
+}
+#F4{
+-webkit-transform:rotateY(180deg)translatez(200px);
+}
+#F5{
+-webkit-transform:rotateY(-90deg)translatez(200px);
+}
+#F6{
+-webkit-transform:rotateX(-90deg)translatez(200px)rotate(180deg);
+}
+</style>
 </head>
-
-<body style="text-align: center; font-size: 30px;">
-    <a href="https://meet.google.com/hug-ivvn-ggh">
-        lab web
-    </a> <br>
-<br>
-    <a   href="https://meet.google.com/linkredirect?authuser=0&dest=https%3A%2F%2Fdrive.google.com%2Fopen%3Fid%3D1qrAHdCVGDTP-a4VoleaeuEuuAhg25gXl">
-        drive </a>
-        <br> <br>
-        <a href="https://meet.google.com/smt-icwv-dos">Nhật</a>
-
-        <br> <br>
-        <a href="https://meet.google.com/pvm-eonz-cgx">Swr</a>
-
-        <br> <br>
-        <a href="https://meet.google.com/xjs-nofm-urx">Swt</a>
-
-        <br> <br>
-        <a href="https://meet.google.com/xsa-mbob-dsf">Prn</a>
+<body>
+<div id="container">
+<div id="cube">
+<img src ="" class= "face" id="F1" />
+<img src ="2.jpg" class= "face" id="F2" />
+<img src ="1.jpg" class= "face" id="F3" />
+<img src ="4.jpg" class= "face" id="F4" />
+<img src ="6.png" class= "face" id="F5" />
+<img src ="" class= "face" id="F6" />
+</div>
+</div>
 </body>
-
 </html>
-
